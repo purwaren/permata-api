@@ -103,9 +103,16 @@ type RevBillRq struct {
     RevBillRq PayBillReq
 }
 
+func (p RevBillRq) Validate() error {
+    return validation.ValidateStruct(&p,
+        validation.Field(&p.RevBillRq, validation.Required),
+    )
+}
+
 type RevBillRs struct {
     RevBillRs PayBillRes
 }
+
 
 
     
